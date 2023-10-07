@@ -1,0 +1,7 @@
+Website Responsive for:
+----------------------
+Samsung Galaxy S20 Ultra
+Samsung Galaxy A51/71
+iPhone XR
+
+I changed the countries official names for the common names
