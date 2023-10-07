@@ -6,7 +6,9 @@ let inputCountryName = document.getElementById("name")
 
 const cards_divs_countries = []
 let ordered_countries = []
+
 let flag = false
+
 
 const addressURL = "https://restcountries.com/v3.1/all"
 
@@ -32,6 +34,8 @@ fetch(addressURL)
             countryName.textContent = element.name.common
 
             card.append(countryFlag, countryName)
+
+            cards_divs_countries.push(card)
             card_container.append(card)
 
             cards_divs_countries.push(card)
@@ -52,6 +56,7 @@ console.log(cards_divs_countries);
 
 
 
+
 // I tried to sort the countries alphabetically ... it works
 // Now I need to add everything back to the page, but already organized
 btn_Alphabetically.addEventListener("click", ()=>{
@@ -66,7 +71,9 @@ btn_Alphabetically.addEventListener("click", ()=>{
             return 1
         }
     })
+
     console.log(ordered_countries);
+    console.log(ordered_countries)
 })
 
 

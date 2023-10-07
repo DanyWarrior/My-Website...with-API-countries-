@@ -70,6 +70,7 @@ nav {
     align-items: center;
 }
 
+
 button {
     background-color: aquamarine;
     padding: 5px;
@@ -80,6 +81,7 @@ button:hover {
 .searchInfo {
     margin-top: 5px;
 }
+
 
 
 
