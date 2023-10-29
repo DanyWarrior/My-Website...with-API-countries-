@@ -4,6 +4,13 @@ const btn_SearchInfo = document.querySelector(".searchInfo")
 const btn_Alphabetically = document.querySelector(".alphabetically")
 let inputCountryName = document.getElementById("name")
 
+<<<<<<< HEAD
+=======
+const cards_divs_countries = []
+let ordered_countries = []
+
+let flag = false
+>>>>>>> 25d6b5f89816b5654dab82351bc91621ac301652
 
 
 const addressURL = "https://restcountries.com/v3.1/all"
@@ -15,7 +22,10 @@ fetch(addressURL)
     .then(data => {
         
         data.forEach(element => {
+<<<<<<< HEAD
             // console.log(element)
+=======
+>>>>>>> 25d6b5f89816b5654dab82351bc91621ac301652
             // console.log(element.name.common);
             // console.log(element.capital);
             // console.log(element.flags.svg);
@@ -30,6 +40,7 @@ fetch(addressURL)
             card.classList.add("card")
             let countryFlag = document.createElement("img")
             countryFlag.classList.add("countryFlag")
+<<<<<<< HEAD
             countryFlag.src = element.flags.png
             let countryName = document.createElement("p")
             countryName.classList.add("countryName")
@@ -45,6 +56,19 @@ fetch(addressURL)
 
             cards_divs_countries.push(card)
 
+=======
+            countryFlag.src = element.flags.svg
+            let countryName = document.createElement("p")
+            countryName.classList.add("countryName")
+            countryName.textContent = element.name.common
+
+            card.append(countryFlag, countryName)
+
+            cards_divs_countries.push(card)
+            card_container.append(card)
+>>>>>>> 25d6b5f89816b5654dab82351bc91621ac301652
+
+            cards_divs_countries.push(card)
 
             let country = 
             {
@@ -75,6 +99,7 @@ console.log(cards_divs_countries);
 
 
 
+<<<<<<< HEAD
 // function to get all divs inside Card Container after fetch call
 function gettingAllcardsDivs(){
     setTimeout(()=>{
@@ -106,6 +131,8 @@ gettingAllcardsDivs()
 
 // ********************************* BUTTONS ***********************************
 
+=======
+>>>>>>> 25d6b5f89816b5654dab82351bc91621ac301652
 // I tried to sort the countries alphabetically ... it works
 // Now I need to add everything back to the page, but already organized
 btn_Alphabetically.addEventListener("click", ()=>{
@@ -120,10 +147,21 @@ btn_Alphabetically.addEventListener("click", ()=>{
             return 1
         }
     })
+<<<<<<< HEAD
     console.log(ordered_countries);
 })
 
 
+=======
+
+    console.log(ordered_countries);
+    console.log(ordered_countries)
+})
+
+
+
+
+>>>>>>> 25d6b5f89816b5654dab82351bc91621ac301652
 
 btn_SearchInfo.addEventListener("click", ()=>{
     
@@ -134,8 +172,12 @@ btn_SearchInfo.addEventListener("click", ()=>{
     }
 })
 
+<<<<<<< HEAD
 // ****************************************************************************
 
 
 
 
+=======
+// let a = ["vaca", "feo", "amor", "cirra"]
+>>>>>>> 25d6b5f89816b5654dab82351bc91621ac301652
