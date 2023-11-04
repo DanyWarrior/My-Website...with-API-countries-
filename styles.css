@@ -129,80 +129,6 @@ button:hover {
 
 
 
-header {
-    background-color: lightcoral;
-    height: 100px;
-    box-shadow: 0 0 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.world-flags-incon {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    left: 40px;
-}
-
-h1 {
-    font-size: 3rem;
-    position: absolute;
-    left: 140px;
-}
-
-nav {
-    position: absolute;
-    right: 40px;
-}
-.links {
-    height: 25px;
-    color: black;
-    font-weight: 800;
-    text-decoration: none;
-    margin-left: 40px;
-}
-
-.links:hover {
-    text-shadow: 0 0 5px;
-}
-
-
-/* ********************************************* */
-
-
-
-.search {
-    background-color: lightskyblue;
-    box-shadow: 0 0 5px;
-    height: 50px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-
-button {
-    background-color: aquamarine;
-    padding: 5px;
-}
-button:hover {
-    box-shadow: 0 0 2px;
-}
-.searchInfo {
-    margin-top: 5px;
-}
-
-
-
-
-/* ********************************************* */
-
-
 
 .card-container {
     background-color: #BEFFF7;
@@ -233,31 +159,21 @@ button:hover {
 
 .countryFlag {
     width: 100px;
-<<<<<<< HEAD
     height: 65px;
     /* margin-bottom: 15px; */
     border: solid 1px black;
-=======
-    height: 93px;
->>>>>>> 25d6b5f89816b5654dab82351bc91621ac301652
     position: absolute;
     top: -20px;
 }
 
-.countryName {
-<<<<<<< HEAD
-    /* background-color: burlywood; */
-    /* width: 100%; */
-    /* height: 50px; */
-    /* border: solid 1px black; */
-    margin-bottom: 10px;
-=======
+.p_countryName {
     width: 100%;
     height: 50px;
-    border: solid 1px black;
->>>>>>> 25d6b5f89816b5654dab82351bc91621ac301652
+    color: #000;
+    font-size: 1.1rem;
+    text-align: center;
     position: absolute;
-    bottom: 0;
+    bottom: -7px;
 }
 
 
@@ -266,11 +182,7 @@ button:hover {
 
 
 footer {
-<<<<<<< HEAD
     background-color: #6499E9;
-=======
-    background-color: lightcoral;
->>>>>>> 25d6b5f89816b5654dab82351bc91621ac301652
     height: 100px;
     box-shadow: 0 0 5px;
     position: sticky;
@@ -312,7 +224,7 @@ footer {
     }
 
 
-<<<<<<< HEAD
+
     .card {
         height: 140px;
         margin: 30px 20px 15px 20px;
@@ -322,8 +234,7 @@ footer {
         border: solid 1px black;
         position: relative;
     }
-=======
->>>>>>> 25d6b5f89816b5654dab82351bc91621ac301652
+
     .countryFlag {
         width: 100%;
         height: 93px;

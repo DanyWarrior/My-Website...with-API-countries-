@@ -1,1 +1,1 @@
-The country cards have been improved in CSS, these cards now have a link (made with JavaScript) to another HTML file that I created to show a description of the country that is clicked on
+The project broke because I mixed several versions, now it is fixed. I also added functionality to the Order Alphabetically button and it works perfectly.
