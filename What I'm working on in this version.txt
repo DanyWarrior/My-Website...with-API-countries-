@@ -1,1 +1,5 @@
-The project broke because I mixed several versions, now it is fixed. I also added functionality to the Order Alphabetically button and it works perfectly.
+. I created an unordered list inside the search bar to create lists using fetch().
+. I styled these lists in CSS
+. Javascript was used to create the list and filter the search
+
+... Now I need that when you click on the desired country from the search list, this one goes to it's description section

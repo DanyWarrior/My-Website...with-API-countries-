@@ -5,7 +5,10 @@
 }
 
 body {
-    background-color: #9EDDFF;
+    /* background-color: #9EDDFF; */
+    background-image: url("/imgs/body\ background.jpg");
+    position: relative;
+    min-height: 100vh;
 }
 
 /* 
@@ -42,11 +45,12 @@ header {
     left: 40px;
 }
 
-h1 {
-    font-size: 3rem;
+.title {
+    font-size: 3.5rem;
     color: azure;
     text-shadow: 0 0 3px black;
     position: absolute;
+    top:15px;
     left: 140px;
 }
 
@@ -59,6 +63,7 @@ nav {
     /* color: black; */
     color: azure;
     text-shadow: 0 0 3px black;
+    font-size: 1.1rem;
     font-weight: 800;
     text-decoration: none;
     margin-left: 40px;
@@ -76,8 +81,8 @@ nav {
 .search {
     background-color: lightskyblue;
     box-shadow: 0 0 5px;
-    height: 50px;
-    /* margin-top: 10px; */
+    height: 100px;
+     
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -85,20 +90,65 @@ nav {
     position: sticky;
     top: 100px;
 }
-
-button {
+/*
+.search-input {
+    padding: 5px;
+    border-radius: 5px;
+    border: solid 1px azure;
+}
+*/
+.btn-alphabetically {
     background-color: #6499E9;
     color: azure;
     text-shadow: 0 0 3px black;
+    border-radius: 5px;
     border: solid 1px azure;
     box-shadow: 0 0 2px black;
-    padding: 5px;
+    padding: 10px;
+    position: absolute;
+    top: 35px;
+    left: 100px;
 }
 button:hover {
     box-shadow: 0 0 5px black;
 }
 .searchInfo {
     margin-top: 5px;
+}
+
+
+
+.search-container-block2 {
+    margin: 20px 0 10px 0;
+    width: 250px;
+    position: absolute;
+    top: 15px;
+    right: 100px;
+}
+.autocomplete-input {
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+.autocomplete-input::placeholder {
+    color: rgb(61, 73, 141);
+}
+.autocomplete-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: calc(100%-10px);
+    border-radius: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+.autocomplete-list > li{
+    background-color: rgb(255, 255, 255);
+    color: rgb(52, 73, 150);
+    width: 100%;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 
@@ -117,6 +167,7 @@ button:hover {
     width: 500px;
     height: 400px;
     margin: 200px auto 0 auto;
+    border-radius: 5px;
     box-shadow: 0 0 15px black;
     display: flex;
     flex-direction: column;
@@ -131,15 +182,17 @@ button:hover {
 
 
 .card-container {
-    background-color: #BEFFF7;
-    width: 80%;
-    height: 60%;
-    margin: 10px auto 10px auto; 
-    box-shadow: 0 0 5px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+        /* background-color: #BEFFF7; */
+        background: rgba(36, 88, 166, 0.5);
+        width: 80%;
+        height: 60%;
+        margin: 10px auto 10px auto; 
+        border-radius: 5px;
+        box-shadow: 0 0 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
 }
 
 .card {
@@ -150,11 +203,11 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 1px black;
+    border-radius: 5px;
     position: relative;
 }
 .card:hover {
-    box-shadow: 0 0 3px;
+    box-shadow: inset 0 0 10px rgb(0, 0, 0);
 }
 
 .countryFlag {
@@ -162,6 +215,7 @@ button:hover {
     height: 65px;
     /* margin-bottom: 15px; */
     border: solid 1px black;
+    border-radius: 5px;
     position: absolute;
     top: -20px;
 }
@@ -183,6 +237,7 @@ button:hover {
 
 footer {
     background-color: #6499E9;
+    width: 100%;
     height: 100px;
     box-shadow: 0 0 5px;
     position: sticky;
@@ -210,8 +265,7 @@ footer {
 
     .search {
         background-color: lightskyblue;
-        height: 80px;
-        margin-top: 10px;
+        height: 100px;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -244,17 +298,26 @@ footer {
 }
 
 
-/* @media (max-width: 700px) {
-    
-    h1 {
-        font-size: 3rem;
+@media (max-width: 670px){
+    .search {
+        background-color: lightskyblue;
+        height: 150px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .btn-alphabetically {
+        display: flex;
         position: absolute;
-        top: 10px;
+        left: 250px;
+        top: 20px;
+    } 
+    .search-container-block2 {
+        position: absolute;
+        top: 50px;
+        right: 200px;
     }
     
-    nav {
-        position: absolute;
-        bottom: 10px;
-        left: 18%;
-    }
-} */
+}
+    
+

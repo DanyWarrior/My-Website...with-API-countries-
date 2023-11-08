@@ -10,9 +10,12 @@
 
     <header>
         <img class="world-flags-incon" src="./imgs/international.webp" alt="">
-        <h1>Countries</h1>
+        <a href="index.html">
+            <h1 class="title">Countries</h1>
+        </a>
+        
         <nav>
-            <a class="links github" href="">My GitHub Account</a>
+            <a class="links github" href="https://github.com/DanyWarrior?tab=repositories" target="_blank">My GitHub Account</a>
             <a class="links about" href="">About Me</a>
         </nav>
     </header>
@@ -21,13 +24,19 @@
 
 
     <div class="search">
-        <button class="alphabetically">Order Alphabetically</button>
-        <div class="block2">
+        <button class="btn-alphabetically">Order Alphabetically</button>
+        <div class="search-container-block2">
 
-            <label  for="name">Country Name</label>
-		    <input  type="text" id="name" name="name">
+            <!-- <label  for="name">Country Name</label> -->
+		    <input type="text" class="autocomplete-input" id="country-input" name="" placeholder="search for a country">
 
-            <button class="searchInfo">Search Info</button>
+            <ul class="autocomplete-list" id="country-list">
+                <!-- <li>agua</li>
+                <li>fuego</li>
+                <li>tierra</li>
+                <li>aire</li> -->
+            </ul>
+            <!-- <button class="searchInfo">Search Info</button> -->
         </div>
         
     </div>

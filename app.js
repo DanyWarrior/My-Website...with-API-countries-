@@ -1,7 +1,7 @@
 
 const card_container = document.querySelector(".card-container")
 const btn_SearchInfo = document.querySelector(".searchInfo")
-const btn_Alphabetically = document.querySelector(".alphabetically")
+const btn_Alphabetically = document.querySelector(".btn-alphabetically")
 let inputCountryName = document.getElementById("name")
 
 
@@ -16,13 +16,25 @@ const addressURL = "https://restcountries.com/v3.1/all"
 
 const countriesObj_fromJSON = [] // personalized array of Objts from API
 
+const country_ul_element = document.getElementById("country-list")
+const country_input_element = document.getElementById("country-input")
+
 fetch(addressURL)
     .then(res => res.json())
     .then(data => {
+
+        // Adding the country's name to an array
+        countries_Array = data.map( x => x.name.common)
+        countries_Array.sort()
+
+        loadData(countries_Array, country_ul_element)
         
         data.forEach(element => {
             // console.log(element)
-            // console.log(element.name.common);
+            //  console.log(element.idd.suffixes)
+            //  console.log(element.name.common);
+            //  const slug = element.name.common
+            //  const url = 'https://restcountries.com/v3.1/name/${slug}'
             // console.log(element.capital);
             // console.log(element.flags.svg);
             // console.log(element.population);
@@ -46,7 +58,27 @@ fetch(addressURL)
         })
     });
     
+// para agregar lista de paises a la UL(unordered-list)
+function loadData(array, ul){
+    if (array){
+        ul.innerHTML = ""
+        let innerElement = ""
+        array.forEach(item => {
+            innerElement += `<li>${item}</li>`
+        })
+        ul.innerHTML = innerElement
+    }
+}
 
+function filterData(array, searchText){
+    return array.filter(item => item.toLowerCase().includes(searchText.toLowerCase()))
+}
+
+
+country_input_element.addEventListener("input", ()=>{
+    const filtered = filterData(countries_Array, country_input_element.value)
+    loadData(filtered, country_ul_element)
+})
 
 
 console.log(countriesObj_fromJSON);
