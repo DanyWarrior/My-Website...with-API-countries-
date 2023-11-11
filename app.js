@@ -5,6 +5,8 @@ const btn_Alphabetically = document.querySelector(".btn-alphabetically")
 let inputCountryName = document.getElementById("name")
 
 
+
+
 const cards_divs_countries = []
 let ordered_countries = []
 let allDivsInsideContainer = []
@@ -31,15 +33,17 @@ fetch(addressURL)
         
         data.forEach(element => {
             // console.log(element)
-            //  console.log(element.idd.suffixes)
-            //  console.log(element.name.common);
-            //  const slug = element.name.common
-            //  const url = 'https://restcountries.com/v3.1/name/${slug}'
+            // console.log(element.idd.suffixes)
+            // console.log(element.name.common);
             // console.log(element.capital);
             // console.log(element.flags.svg);
             // console.log(element.population);
+            //console.log(element.languages)
+            //console.log(element.currencies)
 
-
+            
+            
+            
             let country = 
             {
                 flag: element.flags.png,
@@ -48,15 +52,31 @@ fetch(addressURL)
                 capital: element.capital, 
                 population: element.population,
                 languages: element.languages,
-                currencies: element.currencies,
+                //currencies:,
                 region: element.region,
                 continents: element.continents,
                 maps: element.maps,
-            }
+                id: element.idd.suffixes,
+                url: "https://restcountries.com/v3.1/name/" + element.name.common,
+                description: `The official name of this country is: ${element.name.official}
+                    Its capital is: ${element.capital}
+                    It has a population of: ${element.population}
+                    The languages spoken are: ${element.languages}
+                    The Currencies: ${element.currencies} 
+                    It is located in the region of: ${element.region}
+                    In the continent: ${element.continents}
+                    Here you can find it on the map: ${element.maps}`
+            } 
             countriesObj_fromJSON.push(country)
-
         })
-    });
+    })
+
+
+
+
+
+
+
     
 // para agregar lista de paises a la UL(unordered-list)
 function loadData(array, ul){
@@ -81,7 +101,8 @@ country_input_element.addEventListener("input", ()=>{
 })
 
 
-console.log(countriesObj_fromJSON);
+
+
 
 
 
@@ -98,8 +119,10 @@ function creating_Cards(array){
             // si puedo hacer link a otro HTML para que me muestre 
             // la descripcion del pais
             let link_containerForCard = document.createElement("a")
+            link_containerForCard.id = element.id
             link_containerForCard.classList.add("link_containerForCard")
-            link_containerForCard.href = "./countriesInfo.html"
+            // link_containerForCard.href = "./countriesInfo.html"
+            // link_containerForCard.href = element.url
             link_containerForCard.target = "_blank"
     
             let card = document.createElement("div")
@@ -116,14 +139,17 @@ function creating_Cards(array){
     
             card.append(countryName, countryFlag)
             link_containerForCard.append(card)
-    
+
             card_container.append(link_containerForCard)
     
             cards_divs_countries.push(link_containerForCard)
+            
         })
     }, 1000)
-            
 }
+
+
+
 
 
 
@@ -152,40 +178,49 @@ function ordering_Alphabetically(array){
 
 
 
+
+
+
+
 console.log(cards_divs_countries);
 console.log(countriesObj_fromJSON);
 
 
-creating_Cards(countriesObj_fromJSON)
-ordering_Alphabetically(countriesObj_fromJSON)
 
 
 
 
 
-// function to get all divs inside Card Container after fetch call
-function gettingAllcardsDivs(){
-    setTimeout(()=>{
-        //
-        cards_divs_countries.forEach(element =>{
+// function to get the description of the country that has been Clicked
+function countriesDescription(links, objects){
+    setTimeout(() => {
+
+        let linkName;
+
+        links.forEach(element =>{
+
             element.addEventListener("click", ()=>{
-                console.log(`
-The official name of this country is: ${countriesObj_fromJSON.official_name}
-Its capital is: ${countriesObj_fromJSON.capital}
-It has a population of: ${countriesObj_fromJSON.population}
-The languages spoken are: ${countriesObj_fromJSON.languages}
-The Currencies: ${countriesObj_fromJSON.currencies}
-It is located in the region of: ${countriesObj_fromJSON.region}
-In the continent: ${countriesObj_fromJSON.continents}
-Here you can find it on the map: ${countriesObj_fromJSON.maps}`)
-
+                linkName = element.textContent
+                
+                for (ele of objects){
+                    if (ele.name === linkName){
+                        console.log(ele.description)
+                    }
+                }
             })
         })
-    }, 1000)
+    }, 1000);
 }
 
 
-gettingAllcardsDivs()
+
+
+
+
+
+creating_Cards(countriesObj_fromJSON)
+ordering_Alphabetically(countriesObj_fromJSON)
+countriesDescription(cards_divs_countries, countriesObj_fromJSON)
 
 
 
@@ -194,47 +229,19 @@ gettingAllcardsDivs()
 
 
 
-
-
-
-
-// // ********************************* BUTTONS ***********************************
-
-// // I tried to sort the countries alphabetically ... it works
-// // Now I need to add everything back to the page, but already organized
-// btn_Alphabetically.addEventListener("click", ()=>{
-//     ordered_countries = countriesObj
-//     ordered_countries.sort((country1, country2) => {
-//         country1 = country1.name
-//         country2 = country2.name
-//         if (country1 < country2){
-//             return -1
+// let rat = {
+//     name: "Pepe",
+//     children: {
+//         detalles: {
+//             number: 12,
+//             hairColor: "brown"
 //         }
-//         if (country1 > country2){
-//             return 1
-//         }
-//     })
-
-//     console.log(ordered_countries);
-// })
-
-
-
-
-//     console.log(ordered_countries);
-//     console.log(ordered_countries)
-
-
-
-// btn_SearchInfo.addEventListener("click", ()=>{
-    
-//     if (inputCountryName.value === ""){
-//         alert("Field is Empty")
-//     } else {
-//         console.log(inputCountryName.value);
 //     }
-// })
+// }
 
+// console.log(rat)
+// console.log(rat.name)
+// console.log(rat.children)
 
-
-
+// let {children: {detalles: {hairColor}}} = rat
+// console.log(hairColor)

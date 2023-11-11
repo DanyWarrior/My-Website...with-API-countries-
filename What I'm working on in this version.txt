@@ -1,5 +1,4 @@
-. I created an unordered list inside the search bar to create lists using fetch().
-. I styled these lists in CSS
-. Javascript was used to create the list and filter the search
+. Function created to get the description of the clicked country... this description is displayed in the console, 
+here there are some elements that appears as [object] and this need to be fixed
 
 ... Now I need that when you click on the desired country from the search list, this one goes to it's description section
