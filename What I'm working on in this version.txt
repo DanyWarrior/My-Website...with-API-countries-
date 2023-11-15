@@ -1,4 +1,3 @@
-. Function created to get the description of the clicked country... this description is displayed in the console, 
-here there are some elements that appears as [object] and this need to be fixed
+I've created a function to show and hide the list of countries from the search bar,
 
-... Now I need that when you click on the desired country from the search list, this one goes to it's description section
+I need to make that when is clicked on any of the countries in the list, it goes to the link in the countriesInfo.html file

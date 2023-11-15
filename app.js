@@ -1,8 +1,12 @@
 
+
+const main = document.querySelector("main")
 const card_container = document.querySelector(".card-container")
 const btn_SearchInfo = document.querySelector(".searchInfo")
 const btn_Alphabetically = document.querySelector(".btn-alphabetically")
 let inputCountryName = document.getElementById("name")
+let all_LI;
+
 
 
 
@@ -10,6 +14,7 @@ let inputCountryName = document.getElementById("name")
 const cards_divs_countries = []
 let ordered_countries = []
 let allDivsInsideContainer = []
+
 
 
 
@@ -77,18 +82,24 @@ fetch(addressURL)
 
 
 
-    
-// para agregar lista de paises a la UL(unordered-list)
+
+// to add list of countries to UL(unordered-list)
 function loadData(array, ul){
+
     if (array){
         ul.innerHTML = ""
         let innerElement = ""
         array.forEach(item => {
             innerElement += `<li>${item}</li>`
         })
+
         ul.innerHTML = innerElement
+
+        all_LI = document.querySelectorAll("li")
+        console.log(all_LI)
     }
 }
+
 
 function filterData(array, searchText){
     return array.filter(item => item.toLowerCase().includes(searchText.toLowerCase()))
@@ -99,6 +110,32 @@ country_input_element.addEventListener("input", ()=>{
     const filtered = filterData(countries_Array, country_input_element.value)
     loadData(filtered, country_ul_element)
 })
+
+
+
+
+
+
+
+
+
+function showHide_ListOfCountries_searchBar(){
+
+    country_ul_element.style.display = "none"
+
+    country_input_element.addEventListener("mouseover", ()=>{
+        country_ul_element.style.display = ""
+    })
+
+    main.addEventListener("mouseover", ()=>{
+        country_ul_element.style.display = "none"
+    })
+}
+
+
+
+
+
 
 
 
@@ -121,7 +158,7 @@ function creating_Cards(array){
             let link_containerForCard = document.createElement("a")
             link_containerForCard.id = element.id
             link_containerForCard.classList.add("link_containerForCard")
-            // link_containerForCard.href = "./countriesInfo.html"
+             link_containerForCard.href = "./countriesInfo.html"
             // link_containerForCard.href = element.url
             link_containerForCard.target = "_blank"
     
@@ -169,7 +206,7 @@ function ordering_Alphabetically(array){
           }
         });
     
-        console.log(array)
+        //console.log(array)
     
         creating_Cards(array)
     
@@ -221,6 +258,7 @@ function countriesDescription(links, objects){
 creating_Cards(countriesObj_fromJSON)
 ordering_Alphabetically(countriesObj_fromJSON)
 countriesDescription(cards_divs_countries, countriesObj_fromJSON)
+showHide_ListOfCountries_searchBar()
 
 
 
