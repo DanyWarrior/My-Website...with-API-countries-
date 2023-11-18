@@ -7,6 +7,10 @@
 body {
     /* background-color: #9EDDFF; */
     background-image: url("/imgs/body\ background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     position: relative;
     min-height: 100vh;
 }
