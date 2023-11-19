@@ -160,30 +160,60 @@ li:hover {
 }
 
 
-/* ********************************************* */
 
-/* main {
-    background-color: bisque;
-} */
+
+
+
+
+
 
 /* ********************************************* */
 
 
 .description-Container {
     background-color: lightskyblue;
-    width: 500px;
-    height: 400px;
+    width: 800px;
+    height: 500px;
     margin: 200px auto 0 auto;
-    border-radius: 5px;
-    box-shadow: 0 0 15px black;
+    border-radius: 15px;
+    box-shadow: inset 0 0 15px black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.descrip-countryFlag {
+    width: 400px;
+    border: solid 1px black;
+    border-radius: 15px;
+    position: absolute;
+    top: -70px;
+}
+.country-name {
+    margin: 40px 0 10px 0;
+    font-size: 3rem;
+    font-weight: 800;
+    position: absolute;
+    top: 180px;
+}
+.this-Is-The-Description {
+    padding: 30px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: absolute;
+    bottom: 30px;
 }
 
 
 /* ********************************************* */
+
+
+
+
+
+
 
 
 

@@ -6,6 +6,7 @@ const btn_SearchInfo = document.querySelector(".searchInfo")
 const btn_Alphabetically = document.querySelector(".btn-alphabetically")
 let inputCountryName = document.getElementById("name")
 let all_LI;
+let creatingHTML_file;
 
 
 
@@ -45,7 +46,6 @@ fetch(addressURL)
             // console.log(element.population);
             //console.log(element.languages)
             //console.log(element.currencies)
-
             
             
             
@@ -117,8 +117,6 @@ country_input_element.addEventListener("input", ()=>{
 
 
 
-
-
 function showHide_ListOfCountries_searchBar(){
 
     country_ul_element.style.display = "none"
@@ -131,13 +129,6 @@ function showHide_ListOfCountries_searchBar(){
         country_ul_element.style.display = "none"
     })
 }
-
-
-
-
-
-
-
 
 
 
@@ -158,8 +149,9 @@ function creating_Cards(array){
             let link_containerForCard = document.createElement("a")
             link_containerForCard.id = element.id
             link_containerForCard.classList.add("link_containerForCard")
-             link_containerForCard.href = "./countriesInfo.html"
+            // link_containerForCard.href = "./countriesInfo.html" + "/" + element.id
             // link_containerForCard.href = element.url
+             link_containerForCard.href = "./countriesInfo.html"
             link_containerForCard.target = "_blank"
     
             let card = document.createElement("div")
@@ -184,8 +176,6 @@ function creating_Cards(array){
         })
     }, 1000)
 }
-
-
 
 
 
@@ -238,10 +228,14 @@ function countriesDescription(links, objects){
 
             element.addEventListener("click", ()=>{
                 linkName = element.textContent
-                
+                localStorage.setItem("eachCountryName-perClick", linkName)
+
                 for (ele of objects){
                     if (ele.name === linkName){
                         console.log(ele.description)
+                        console.log(ele.flag)
+                        localStorage.setItem("selected-country", ele.description)
+                        localStorage.setItem("country-flag", ele.flag)
                     }
                 }
             })
@@ -255,10 +249,25 @@ function countriesDescription(links, objects){
 
 
 
+// Sending data to localStorage
+function dataTo_localStorage(){
+    setTimeout(() => {
+        localStorage.setItem("countriesArray-withObjets", JSON.stringify(countriesObj_fromJSON))
+        console.log(localStorage)
+    }, 1000);
+}
+
+
+
+
+
+
+
 creating_Cards(countriesObj_fromJSON)
 ordering_Alphabetically(countriesObj_fromJSON)
 countriesDescription(cards_divs_countries, countriesObj_fromJSON)
 showHide_ListOfCountries_searchBar()
+dataTo_localStorage()
 
 
 
