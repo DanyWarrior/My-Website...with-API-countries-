@@ -1,2 +1,3 @@
-I have found a way to save the data from index.html so I can use it in another file called countriesInfo.html.
-I achieved this using localStorage. Saving the array of objects, and when clicking saving the names of each countries and the url address of the flags of each country.
+. I have found a way to save the data from index.html so I can use it in another file called countriesInfo.html.
+
+. I achieved this using localStorage. Saving the array of objects, and when clicking saving the names of each countries and the url address of the flags of each country.
