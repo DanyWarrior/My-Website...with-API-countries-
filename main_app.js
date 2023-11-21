@@ -90,13 +90,18 @@ function loadData(array, ul){
         ul.innerHTML = ""
         let innerElement = ""
         array.forEach(item => {
-            innerElement += `<li>${item}</li>`
+            innerElement += `<a class="linkList" href="./countriesInfo.html" target="_blank"><li>${item}</li></a>`
         })
 
         ul.innerHTML = innerElement
 
         all_LI = document.querySelectorAll("li")
-        console.log(all_LI)
+        //console.log(all_LI)
+        
+        all_linkList = document.querySelectorAll(".linkList")
+        //console.log(all_linkList)
+
+        searchBar_functionality(all_LI, countriesObj_fromJSON)
     }
 }
 
@@ -243,6 +248,29 @@ function countriesDescription(links, objects){
     }, 1000);
 }
 
+
+
+
+
+
+
+// Adding funcionality to the Search Bar
+function searchBar_functionality(nodeArray_of_LI, objects){
+    
+    nodeArray_of_LI.forEach(element =>{
+    element.addEventListener("click", ()=>{
+        localStorage.setItem("eachCountryName-perClick", element.textContent)
+        for (ele of objects){
+            if (ele.name === element.textContent){
+                //console.log(ele.description)
+                //console.log(ele.flag)
+                localStorage.setItem("selected-country", ele.description)
+                localStorage.setItem("country-flag", ele.flag)
+            }
+        }
+    })
+})
+}
 
 
 

@@ -1,3 +1,3 @@
-. I have found a way to save the data from index.html so I can use it in another file called countriesInfo.html.
+. I have given functionality to the search bar, this means that when you type the desired country and then click on it, it takes you to the countriesInfo.html file showing its description. Managing to have the same functionality of the cards found in the body.
 
-. I achieved this using localStorage. Saving the array of objects, and when clicking saving the names of each countries and the url address of the flags of each country.
+. I put the list in the search bar inside <a></a> so they worked as links.

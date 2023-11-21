@@ -146,7 +146,7 @@ button:hover {
     max-height: 150px;
     overflow-y: auto;
 }
-.autocomplete-list > li{
+.autocomplete-list > .linkList > li {
     background-color: rgb(255, 255, 255);
     color: rgb(52, 73, 150);
     width: 100%;
@@ -154,8 +154,10 @@ button:hover {
     font-weight: bold;
     cursor: pointer;
 }
-
-li:hover {
+.linkList {
+    text-decoration: none;
+}
+.linkList > li:hover {
     background-color: lightblue;
 }
 
