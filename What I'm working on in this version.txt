@@ -1,3 +1,3 @@
-. I have given functionality to the search bar, this means that when you type the desired country and then click on it, it takes you to the countriesInfo.html file showing its description. Managing to have the same functionality of the cards found in the body.
+. I have created the contactMe.html file and styled it with CSS.
 
-. I put the list in the search bar inside <a></a> so they worked as links.
+. Now I need to give it functionality, that way when the fields are filled out and clicked on the send button I can receive the data by email.

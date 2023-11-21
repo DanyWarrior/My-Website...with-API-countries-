@@ -204,7 +204,12 @@ function ordering_Alphabetically(array){
         //console.log(array)
     
         creating_Cards(array)
-    
+
+        creating_Cards(countriesObj_fromJSON)
+        countriesDescription(cards_divs_countries, countriesObj_fromJSON)
+        showHide_ListOfCountries_searchBar()
+        dataTo_localStorage()
+
     });
 }
 
