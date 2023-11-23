@@ -48,7 +48,6 @@ header {
     position: absolute;
     left: 40px;
 }
-
 .title {
     font-size: 3.5rem;
     color: azure;
@@ -60,6 +59,7 @@ header {
 
 nav {
     position: absolute;
+    bottom: 35px;
     right: 40px;
 }
 .links {
@@ -86,21 +86,13 @@ nav {
     background-color: lightskyblue;
     box-shadow: 0 0 5px;
     height: 100px;
-     
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     z-index: 10;
     position: sticky;
     top: 100px;
 }
-/*
-.search-input {
-    padding: 5px;
-    border-radius: 5px;
-    border: solid 1px azure;
-}
-*/
 .btn-alphabetically {
     background-color: #6499E9;
     color: azure;
@@ -109,25 +101,20 @@ nav {
     border: solid 1px azure;
     box-shadow: 0 0 2px black;
     padding: 10px;
-    position: absolute;
+    /* position: absolute;
     top: 35px;
-    left: 100px;
+    left: 100px; */
 }
 button:hover {
     box-shadow: 0 0 5px black;
 }
-.searchInfo {
-    margin-top: 5px;
-}
-
-
 
 .search-container-block2 {
     margin: 20px 0 10px 0;
     width: 250px;
-    position: absolute;
+    /* position: absolute;
     top: 15px;
-    right: 100px;
+    /* right: 100px;     I have a problem when the list is displayed */
 }
 .autocomplete-input {
     padding: 10px;
@@ -139,7 +126,7 @@ button:hover {
 }
 .autocomplete-list {
     list-style-type: none;
-    margin: 0;
+    margin: 0px;
     padding: 0;
     width: calc(100%-10px);
     border-radius: 5px;
@@ -303,34 +290,78 @@ footer {
 /* ********************************************* */
 
 
-@media (max-width: 700px) {
+
+@media (max-width: 880px){
+    .description-Container {
+        width: 600px;
+        height: 550px;
+    }
     
-    h1 {
-        font-size: 3rem;
+    .descrip-countryFlag {
+        width: 400px;
+        border: solid 1px black;
+        border-radius: 15px;
         position: absolute;
-        top: 10px;
+        top: -70px;
+    }
+    .country-name {
+        margin: 40px 0 10px 0;
+        font-size: 3rem;
+        font-weight: 800;
+        position: absolute;
+        top: 180px;
+    }
+    .this-Is-The-Description {
+        padding: 30px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        position: absolute;
+        bottom: 30px;
+    }
+
+}
+
+
+@media (max-width: 745px) {
+    header {
+        height: 130px;
+    }
+    .container-for-title-nav {  /* container responds but not what's inside it */
+        /* border: solid 1px black; */
+        width: 400px;
+        height: 130px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    a > .title {
+        position: absolute;
+        left: 20%;
     }
     nav {
+        text-align: center;
         position: absolute;
-        bottom: 10px;
-        left: 18%;
-    }
+        right: 16%;
+        bottom: 12px;
+    } 
 
 
     .search {
         background-color: lightskyblue;
-        height: 100px;
+        height: 140px;
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-    .block2 {
-        display:  flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: sticky;
+        top: 120px;
     }
-
+    .btn-alphabetically {
+        margin-top: 15px;
+        /* left: 35%; */
+    }
 
 
     .card {
@@ -342,7 +373,6 @@ footer {
         border: solid 1px black;
         position: relative;
     }
-
     .countryFlag {
         width: 100%;
         height: 93px;
@@ -352,26 +382,114 @@ footer {
 }
 
 
-@media (max-width: 670px){
-    .search {
-        background-color: lightskyblue;
-        height: 150px;
+
+
+@media (max-width: 650px){
+    .description-Container {
+        width: 350px;
+        height: 500px;
+        margin-top: 150px;
+        margin-left: auto;
+        margin-right: auto;
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
-    .btn-alphabetically {
-        display: flex;
+    .descrip-countryFlag {
+        width: 300px;
+        border: solid 1px black;
+        border-radius: 15px;
         position: absolute;
-        left: 250px;
-        top: 20px;
-    } 
-    .search-container-block2 {
-        position: absolute;
-        top: 50px;
-        right: 200px;
+        top: -70px;
     }
-    
+    .country-name {
+        margin: 0px 0 10px 0px;
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 800;
+        position: absolute;
+        top: 160px;
+    }
+    .this-Is-The-Description {
+        padding: 30px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        position: absolute;
+        bottom: 30px;
+    }
 }
-    
 
+
+
+@media (max-width: 455px){
+    header {
+        background-color: #6499E9;
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .world-flags-incon {
+        width: 60px;
+        height: 60px;
+        /* border: solid 1px azure; */
+        border-radius: 50%;
+        box-shadow: 0 0 5px azure;
+        position: absolute;
+        left: 178px;
+        top: 20px;
+    }
+    .container-for-title-nav {
+        margin-top: 80px;
+        /* border: solid 1px black; */
+        width: 400px;
+        height: 130px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    a > .title {
+        font-size: 3.5rem;
+        color: azure;
+        text-shadow: 0 0 3px black;
+        margin: 60px auto 0 -38px;
+        left: 30%;
+    }
+
+    .links {
+        height: 25px;
+        /* margin-top: 10px; */
+        /* color: black; */
+        color: azure;
+        text-shadow: 0 0 3px black;
+        font-size: 1.1rem;
+        font-weight: 800;
+        text-decoration: none;
+        margin-left: 80px;
+    }
+    .search {
+        background-color: lightskyblue;
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 200px;
+    }
+    .btn-alphabetically {
+        margin-top: 50px;
+    }
+    .search-container-block2 {
+        margin-bottom: 25px;
+    }
+
+
+    .description-Container {
+        width: 350px;
+        height: 500px;
+    }
+}

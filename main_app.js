@@ -63,14 +63,14 @@ fetch(addressURL)
                 maps: element.maps,
                 id: element.idd.suffixes,
                 url: "https://restcountries.com/v3.1/name/" + element.name.common,
-                description: `The official name of this country is: ${element.name.official}
-                    Its capital is: ${element.capital}
-                    It has a population of: ${element.population}
-                    The languages spoken are: ${element.languages}
-                    The Currencies: ${element.currencies} 
-                    It is located in the region of: ${element.region}
-                    In the continent: ${element.continents}
-                    Here you can find it on the map: ${element.maps}`
+                description: `The official name of this country is: ${element.name.official}. 
+                    Its capital is: ${element.capital}.
+                    It has a population of: ${element.population}. 
+                    The language spoken is: ${Object.values(element.languages)[0]}. 
+                    The Currencies name: ${Object.values(element.currencies)[0].name} - symbol "${Object.values(element.currencies)[0].symbol}".  
+                    It is located in the region of: ${element.region}. 
+                    In the continent: ${element.continents}. 
+                    Here you can find it on the map: ${element.maps.googleMaps}`
             } 
             countriesObj_fromJSON.push(country)
         })

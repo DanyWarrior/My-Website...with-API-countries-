@@ -1,3 +1,7 @@
-. I have created the contactMe.html file and styled it with CSS.
+. I fixed the [object, Object] in countriesInfo.html file inside description.
 
-. Now I need to give it functionality, that way when the fields are filled out and clicked on the send button I can receive the data by email.
+. Worked on CSS responsive for PC and mobile,
+but I'm having problem with the list in the search bar, 
+I need to fix that. 
+
+. The Form needs functionality in the contactMe.html file

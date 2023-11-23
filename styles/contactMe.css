@@ -53,3 +53,12 @@ textarea {
 .send-button:hover {
     background-color: rgb(130, 191, 228);
 }
+
+/* ********************************************** */
+
+
+@media (max-width: 455px){
+    .container-blurBackground {
+        width: 350px;
+    }
+}
