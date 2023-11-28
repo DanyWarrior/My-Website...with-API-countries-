@@ -26,16 +26,17 @@ const countriesObj_fromJSON = [] // personalized array of Objts from API
 
 const country_ul_element = document.getElementById("country-list")
 const country_input_element = document.getElementById("country-input")
+const countries_Array = []
 
 fetch(addressURL)
     .then(res => res.json())
     .then(data => {
 
         // Adding the country's name to an array
-        countries_Array = data.map( x => x.name.common)
-        countries_Array.sort()
+        // countries_Array = data.map( x => x.name.common)
+        // countries_Array.sort()
 
-        loadData(countries_Array, country_ul_element)
+        // loadData(countries_Array, country_ul_element)
         
         data.forEach(element => {
             // console.log(element)
@@ -47,7 +48,21 @@ fetch(addressURL)
             //console.log(element.languages)
             //console.log(element.currencies)
             
-            
+            let country_languaje = Object.values(element.languages)[0]
+            let currenci_name = Object.values(element.currencies)[0].name
+            let currenci_symbol = Object.values(element.currencies)[0].symbol
+
+
+
+
+            // Adding the country's name to an array
+            countries_Array.push(element.name.common)
+            countries_Array.sort()
+
+            loadData(countries_Array, country_ul_element)
+
+
+
             
             let country = 
             {
@@ -56,7 +71,7 @@ fetch(addressURL)
                 official_name: element.name.official, 
                 capital: element.capital, 
                 population: element.population,
-                languages: element.languages,
+                lang: country_languaje,
                 //currencies:,
                 region: element.region,
                 continents: element.continents,
@@ -66,8 +81,8 @@ fetch(addressURL)
                 description: `The official name of this country is: ${element.name.official}. 
                     Its capital is: ${element.capital}.
                     It has a population of: ${element.population}. 
-                    The language spoken is: ${Object.values(element.languages)[0]}. 
-                    The Currencies name: ${Object.values(element.currencies)[0].name} - symbol "${Object.values(element.currencies)[0].symbol}".  
+                    The language spoken is: ${country_languaje}. 
+                    The Currencies name: "${currenci_name} - symbol ${currenci_symbol}".  
                     It is located in the region of: ${element.region}. 
                     In the continent: ${element.continents}. 
                     Here you can find it on the map: ${element.maps.googleMaps}`
@@ -77,8 +92,29 @@ fetch(addressURL)
     })
 
 
+// languaje ... ${Object.values(element.languages)[0]}
+// currencies ...  ${Object.values(element.currencies)[0].name} - symbol "${Object.values(element.currencies)[0].symbol}
 
 
+
+// // test function ... there is a problem here ... the countries array do not have all names from the API don't know why
+// function a(){
+//     setTimeout(()=>{
+//         let a = 0
+//         let b = 0
+//         for (item of all_LI){
+//             a += 1
+//         }
+//         console.log(`Names in LI list: ${a}`);
+
+//         for (ele of countriesObj_fromJSON){
+//             b += 1
+//         }
+//         console.log(`Names in countriesObj_fromJSON: ${b}`);
+
+//     }, 1000)
+// }
+// a()
 
 
 
@@ -244,8 +280,8 @@ function countriesDescription(links, objects){
                     if (ele.name === linkName){
                         console.log(ele.description)
                         console.log(ele.flag)
-                        localStorage.setItem("selected-country", ele.description)
                         localStorage.setItem("country-flag", ele.flag)
+                        localStorage.setItem("selected-country-description", ele.description)
                     }
                 }
             })
@@ -259,22 +295,25 @@ function countriesDescription(links, objects){
 
 
 
-// Adding funcionality to the Search Bar
+// Adding funcionality to the Search Bar ... link to description country page
 function searchBar_functionality(nodeArray_of_LI, objects){
-    
-    nodeArray_of_LI.forEach(element =>{
-    element.addEventListener("click", ()=>{
-        localStorage.setItem("eachCountryName-perClick", element.textContent)
-        for (ele of objects){
-            if (ele.name === element.textContent){
-                //console.log(ele.description)
-                //console.log(ele.flag)
-                localStorage.setItem("selected-country", ele.description)
-                localStorage.setItem("country-flag", ele.flag)
-            }
-        }
-    })
-})
+    setTimeout(()=>{
+        nodeArray_of_LI.forEach(element =>{
+            element.addEventListener("click", ()=>{
+                console.log(element.innerText);
+                localStorage.setItem("eachCountryName-perClick", element.innerText)
+                
+                objects.forEach(ele =>{
+                    if (ele.name === element.innerText){
+                        console.log(ele.flag);
+                        console.log(ele.description);
+                        localStorage.setItem("country-flag", ele.flag)
+                        localStorage.setItem("selected-country-description", ele.description)
+                    }
+                })
+            })
+        })
+    }, 1000)
 }
 
 
@@ -286,10 +325,9 @@ function searchBar_functionality(nodeArray_of_LI, objects){
 function dataTo_localStorage(){
     setTimeout(() => {
         localStorage.setItem("countriesArray-withObjets", JSON.stringify(countriesObj_fromJSON))
-        console.log(localStorage)
+        //console.log(localStorage)
     }, 1000);
 }
-
 
 
 
@@ -299,6 +337,7 @@ function dataTo_localStorage(){
 creating_Cards(countriesObj_fromJSON)
 ordering_Alphabetically(countriesObj_fromJSON)
 countriesDescription(cards_divs_countries, countriesObj_fromJSON)
+searchBar_functionality(all_LI)
 showHide_ListOfCountries_searchBar()
 dataTo_localStorage()
 

@@ -15,8 +15,8 @@ color palette
 */
 
 body {
-    background-color: #6499E9;
-    background-image: url("/imgs/metalBackground.avif");
+    /* background-color: #6499E9; */
+    background-image: url("/imgs/aboutMe2.webp");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -28,47 +28,68 @@ body {
 
 
 .container {
-    /* background-color: lightblue; */
-    width: 650px;
-    height: 350px;
-    margin: 200px auto 0 auto;
+    /* background-color: #6499E9; */
+    margin: 200px auto;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+
+
+.titleGlass {
+    background: linear-gradient(135deg, lightskyblue);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px;
+    margin-bottom: 20px;
+}
 .title {
     font-size: 3rem;
     display: block;
-    background-color: #b3d0fb;
-    width: 300px;
+    /* background-color: #b3d0fb;
+    width: 300px; */
+    color: azure;
     text-align: center;
     padding: 5px;
-    margin-bottom: 10px;
-    border: solid 1px black;
+    /* margin-bottom: 10px; */
+    /* border: solid 1px black;
     border-radius: 10px;
-    box-shadow: inset 0 0 5px;
+    box-shadow: inset 0 0 5px; */
 }
 
 
 .aboutMe-box {
-    background-color: #9EDDFF;
+    /* background-color: #9EDDFF; */
     width: 600px;
     height: 400px;
     padding: 20px;
-    margin-left: auto;
+    /* margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
-    border: solid 1px black;
+    border: solid 1px black; */
+    background: linear-gradient(135deg, lightskyblue);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px;
     box-shadow: inset 0 0 10px;
     display: flex;
     flex-direction: column;
     column-gap: 3px;
 }
 .myName {
+    color: azure;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 10px;
 }
 .me-description {
+    color: azure;
     font-size: 1.2rem;
     font-weight: 400;
 }
@@ -82,13 +103,13 @@ body {
         /* background-color: lightblue; */
         width: 650px;
         height: 350px;
-        margin: 150px auto 0 auto;
+        margin: 350px auto 0 auto;
     }
     .aboutMe-box {
-        background-color: #9EDDFF;
-        width: 400px;
-        height: 500px;
-        padding: 20px;
+        /* background-color: #9EDDFF; */
+        width: 450px;
+        height: 550px;
+        padding: 30px;
         margin-left: auto;
         margin-right: auto;
         border-radius: 10px;
@@ -97,5 +118,11 @@ body {
         display: flex;
         flex-direction: column;
         column-gap: 3px;
+    }
+    .myName {
+        font-size: 1.8rem;
+    }
+    .me-description {
+        font-size: 1.4rem;
     }
 }

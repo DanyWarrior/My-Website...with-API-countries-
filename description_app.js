@@ -16,7 +16,7 @@ let p1 = document.querySelector(".country-name")
 p1.textContent = localStorage.getItem("eachCountryName-perClick")
 
 let p2 = document.querySelector(".this-Is-The-Description")
-p2.textContent = localStorage.getItem("selected-country")
+p2.textContent = localStorage.getItem("selected-country-description")
 
 
 

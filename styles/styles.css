@@ -128,11 +128,14 @@ button:hover {
     list-style-type: none;
     margin: 0px;
     padding: 0;
-    width: calc(100%-10px);
+    /* width: calc(100%-10px); */
+    width: 250px;
     border-radius: 5px;
     max-height: 150px;
     overflow-y: auto;
+    position: absolute;
 }
+
 .autocomplete-list > .linkList > li {
     background-color: rgb(255, 255, 255);
     color: rgb(52, 73, 150);

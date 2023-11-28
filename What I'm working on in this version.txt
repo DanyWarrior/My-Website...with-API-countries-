@@ -1,7 +1,5 @@
-. I fixed the [object, Object] in countriesInfo.html file inside description.
+. I have cut the number of countries from 250 to 120 so that there would be no conflict between the names of the objects and the list shown in the search bar.
 
-. Worked on CSS responsive for PC and mobile,
-but I'm having problem with the list in the search bar, 
-I need to fix that. 
+. Now the search bar works perfectly and I have also fixed it in CSS so that it stays in place becouse previusly was moving out of place when I hovered the mouse
 
-. The Form needs functionality in the contactMe.html file
+. The Form has functionality now.
