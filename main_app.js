@@ -38,14 +38,17 @@ fetch(addressURL)
 
         // loadData(countries_Array, country_ul_element)
         
-        data.forEach(element => {
+        data.forEach(element => { //        ... use an if() to check if there is an empty value
+            if (element.languages == "undefined"){
+                console.log("nothing here");
+            }
             // console.log(element)
             // console.log(element.idd.suffixes)
             // console.log(element.name.common);
             // console.log(element.capital);
             // console.log(element.flags.svg);
             // console.log(element.population);
-            //console.log(element.languages)
+            //console.log({languages: element.languages})
             //console.log(element.currencies)
             
             let country_languaje = Object.values(element.languages)[0]
@@ -91,30 +94,9 @@ fetch(addressURL)
         })
     })
 
-
 // languaje ... ${Object.values(element.languages)[0]}
 // currencies ...  ${Object.values(element.currencies)[0].name} - symbol "${Object.values(element.currencies)[0].symbol}
 
-
-
-// // test function ... there is a problem here ... the countries array do not have all names from the API don't know why
-// function a(){
-//     setTimeout(()=>{
-//         let a = 0
-//         let b = 0
-//         for (item of all_LI){
-//             a += 1
-//         }
-//         console.log(`Names in LI list: ${a}`);
-
-//         for (ele of countriesObj_fromJSON){
-//             b += 1
-//         }
-//         console.log(`Names in countriesObj_fromJSON: ${b}`);
-
-//     }, 1000)
-// }
-// a()
 
 
 
@@ -181,12 +163,7 @@ function creating_Cards(array){
     setTimeout(()=>{
 
         array.forEach(element => {
-            // console.log(element.flag)
-            // Esto es para probar y ver si se puede poner un div
-            // dentro de un link, si esto funciona, entonces tengo que 
-            // acomodar las cards dentro de links, de esa forma probar 
-            // si puedo hacer link a otro HTML para que me muestre 
-            // la descripcion del pais
+
             let link_containerForCard = document.createElement("a")
             link_containerForCard.id = element.id
             link_containerForCard.classList.add("link_containerForCard")
@@ -213,7 +190,6 @@ function creating_Cards(array){
             card_container.append(link_containerForCard)
     
             cards_divs_countries.push(link_containerForCard)
-            
         })
     }, 1000)
 }
@@ -237,15 +213,12 @@ function ordering_Alphabetically(array){
           }
         });
     
-        //console.log(array)
-    
         creating_Cards(array)
 
         creating_Cards(countriesObj_fromJSON)
         countriesDescription(cards_divs_countries, countriesObj_fromJSON)
         showHide_ListOfCountries_searchBar()
         dataTo_localStorage()
-
     });
 }
 
@@ -342,25 +315,3 @@ showHide_ListOfCountries_searchBar()
 dataTo_localStorage()
 
 
-
-
-
-
-
-
-// let rat = {
-//     name: "Pepe",
-//     children: {
-//         detalles: {
-//             number: 12,
-//             hairColor: "brown"
-//         }
-//     }
-// }
-
-// console.log(rat)
-// console.log(rat.name)
-// console.log(rat.children)
-
-// let {children: {detalles: {hairColor}}} = rat
-// console.log(hairColor)

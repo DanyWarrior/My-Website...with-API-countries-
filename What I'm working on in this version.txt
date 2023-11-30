@@ -1,5 +1,1 @@
-. I have cut the number of countries from 250 to 120 so that there would be no conflict between the names of the objects and the list shown in the search bar.
-
-. Now the search bar works perfectly and I have also fixed it in CSS so that it stays in place becouse previusly was moving out of place when I hovered the mouse
-
-. The Form has functionality now.
+. ReadMe file was updated
